@@ -2,21 +2,14 @@ CFLAGS = -Wall -Wextra -Wpedantic -Wwrite-strings -Wstack-usage=512 -Wfloat-equa
 
 all: driver
 
-driver.o: driver.c 
+driver.o:
 	gcc -c $(CFLAGS) driver.c 
 
-header.o: header.h
+header.o:
 	gcc -c $(CFLAGS) header.c
 
 driver: driver.o header.o
-	gcc  driver.o header.o -lpthread -o driver
-
-debug: CFLAGS += -g
-debug: driver
-
-profile: LDFLAGS += -pg
-profile: CFLAGS += -pg
-profile: driver
+	gcc driver.o header.o -lpthread -o driver
 
 clean:
 	rm -rf *.o
