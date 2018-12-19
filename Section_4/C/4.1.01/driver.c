@@ -58,8 +58,8 @@ int main(void)
      * short a 2 byte integer type. Range from
      * -32,768 to 32,767.
      *
-     * long a 4 byte integer type. Range from
-     * -2,147,483,648 to 2,147,483,647.
+     * long a 8 byte integer type. Range from
+     * -9223372036854775808 to +9223372036854775807
      *
      * float a four byte floating point number, used to hold decimal values.
      * Range 1.2E-38 to 3.4E+38 up to 6 decimal precision.
