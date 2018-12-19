@@ -3,13 +3,13 @@ CFLAGS = -Wall -Wextra -Wpedantic -Wwrite-strings -Wstack-usage=512 -Wfloat-equa
 all: driver
 
 driver.o: driver.c 
-	gcc -c driver.c 
+	gcc -c $(CFLAGS) driver.c 
 
-header.c: header.h
-	gcc -c header.c
+header.o: header.h
+	gcc -c $(CFLAGS) header.c
 
-driver: driver.o header.c
-	gcc driver.o header.o -lpthread -o driver
+driver: driver.o header.o
+	gcc  driver.o header.o -lpthread -o driver
 
 debug: CFLAGS += -g
 debug: driver
