@@ -13,3 +13,5 @@ apply skills learned to the specific job role.
 * https://www.geeksforgeeks.org/multithreading-c-2/
 * https://www.cs.nmsu.edu/~jcook/Tools/pthreads/library.html
 * https://medium.com/@shrmoud/static-vs-extern-a79e36f14812
+### 4.1.02
+* https://www.geeksforgeeks.org/memory-layout-of-c-program/
