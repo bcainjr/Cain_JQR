@@ -58,8 +58,8 @@ int main(void)
      * short a 2 byte integer type. Range from
      * -32,768 to 32,767.
      *
-     * long a 4 byte integer type. Range from
-     * -2,147,483,648 to 2,147,483,647.
+     * long a 8 byte integer type. Range from
+     * -9223372036854775808 to +9223372036854775807
      *
      * float a four byte floating point number, used to hold decimal values.
      * Range 1.2E-38 to 3.4E+38 up to 6 decimal precision.
@@ -74,6 +74,11 @@ int main(void)
     float floating = 0.0;
     double doubly = 0.0;
 
+    if (character == 0 || shorter == 0 || integer == 0 || longer == 0 ||
+        floating < 0 || doubly < 0)
+    {
+        puts("true");
+    }
     /*
      * n. Casting
      *
@@ -94,6 +99,7 @@ int main(void)
      * a whole copy.
      */
     int *integer_pointer = &integer;
+    printf("%d\n", *integer_pointer);
 
 
     /*
@@ -110,15 +116,15 @@ int main(void)
      * Array's elements can be accessed by indexing array[1] or by addition
      * array + 1. Those produce the same results.
      */
-    char *array = "Hello world";
-    for (int i = 0; i < strlen(array); i++)
+    char array[12] = "Hello world";
+    for (unsigned int i = 0; i < strlen(array); i++)
     {
         printf("%c", array[i]);
     }
 
     puts("");
 
-    char *array_hash = "Hashing time";
+    char array_hash[13] = "Hashing time";
     printf("hash %s, %d\n", array, hash(array));
     printf("hash %s, %d\n", array_hash, hash(array_hash));
     /*

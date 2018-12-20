@@ -26,7 +26,7 @@ int add(int a, int b)
 int hash(char *hashee)
 {
     int hashing = 0;
-    for (int i = 0; i < strlen(hashee); i++)
+    for (unsigned int i = 0; i < strlen(hashee); i++)
     {
         hashing += (hashing | hashee[i]);
     }
@@ -36,9 +36,16 @@ int hash(char *hashee)
 
 void *threadder(void *varg)
 {
+    if (varg == NULL)
+    {
+        puts("true");
+    }
+
     int *myid = (int *)pthread_self();
     static int counter = 0;
     counter++;
 
     printf("My id is %d static %d\n", *myid, counter);
+
+    return NULL;
 }
